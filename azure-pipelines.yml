@@ -24,9 +24,9 @@ stages:
           command: 'validate'
           workingDirectory: '$(System.DefaultWorkingDirectory)/1-exemplo'
 
-- stage: Dev Plan
+- stage: Dev_Plan
   jobs:
-    - job: 'Plan Dev'
+    - job: 'Plan_Dev'
       steps:
       
       - task: DownloadSecureFile@1
@@ -59,9 +59,9 @@ stages:
 
 
 
-- stage: Dev Apply
+- stage: Dev_Apply
   jobs:
-    - job: 'Apply Dev'
+    - job: 'Apply_Dev'
       steps:
       
       - task: DownloadSecureFile@1
