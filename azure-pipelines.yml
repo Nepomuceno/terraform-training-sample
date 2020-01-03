@@ -69,6 +69,7 @@ stages:
         inputs:
           command: 'plan'
           workingDirectory: '$(System.DefaultWorkingDirectory)/1-exemplo'
+          environmentServiceName: 'Gabriel-Internal(0e9fb02c-62eb-4d75-a174-1d1f01d6dc27)'
 
 
 
@@ -104,6 +105,7 @@ stages:
         inputs:
           command: 'apply'
           workingDirectory: '$(System.DefaultWorkingDirectory)/1-exemplo'
+          environmentServiceName: 'Gabriel-Internal(0e9fb02c-62eb-4d75-a174-1d1f01d6dc27)'
 
 
 
