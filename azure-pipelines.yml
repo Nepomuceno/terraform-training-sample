@@ -11,6 +11,12 @@ pool:
 
 steps:
 
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'supersecret.tfvars'
+
+- script: |
+    cat supersecret.tfvars 
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: '0.12.18'
