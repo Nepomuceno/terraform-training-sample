@@ -18,6 +18,10 @@ stages:
       - task: TerraformInstaller@0
         inputs:
           terraformVersion: '0.12.18'
+      - task: TerraformCLI@0
+        inputs:
+          command: 'init'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/1-exemplo'
 
       - task: TerraformCLI@0
         inputs:
