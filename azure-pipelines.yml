@@ -21,7 +21,16 @@ stages:
       - task: TerraformCLI@0
         inputs:
           command: 'init'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/1-exemplo'
+          backendType: 'azurerm'
+          backendServiceArm: 'Gabriel-Internal(0e9fb02c-62eb-4d75-a174-1d1f01d6dc27)'
+          ensureBackend: true
+          backendAzureRmResourceGroupName: 'terraform'
+          backendAzureRmResourceGroupLocation: 'uksouth'
+          backendAzureRmStorageAccountName: 'ganepomutfstate'
+          backendAzureRmStorageAccountSku: 'Standard_LRS'
+          backendAzureRmContainerName: 'tfstate'
+          backendAzureRmKey: 'tfdemo-take.tfstate'
+          workingDirectory: $(System.DefaultWorkingDirectory)/1-exemplo
 
       - task: TerraformCLI@0
         inputs:
