@@ -10,18 +10,19 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: '0.12.18'
 - task: TerraformCLI@0
   inputs:
-    command: 'plan'
-    environmentServiceName: 'Gabriel-Internal(0e9fb02c-62eb-4d75-a174-1d1f01d6dc27)'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    command: 'init'
+    backendType: 'azurerm'
+    backendServiceArm: 'Gabriel-Internal(0e9fb02c-62eb-4d75-a174-1d1f01d6dc27)'
+    ensureBackend: true
+    backendAzureRmResourceGroupName: 'terraform'
+    backendAzureRmResourceGroupLocation: 'uksouth'
+    backendAzureRmStorageAccountName: 'ganepomutfstate'
+    backendAzureRmStorageAccountSku: 'Standard_LRS'
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'tfdemo-take.tfstate'
