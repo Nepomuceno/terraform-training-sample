@@ -26,3 +26,4 @@ steps:
     backendAzureRmStorageAccountSku: 'Standard_LRS'
     backendAzureRmContainerName: 'tfstate'
     backendAzureRmKey: 'tfdemo-take.tfstate'
+    workingDirectory: $(System.DefaultWorkingDirectory)/1-exemplo
